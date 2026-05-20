@@ -51,4 +51,17 @@ pipeline {
             }
         }
     }
+    post {
+        failure {
+            emailext(
+                subject: "Build FAILED",
+                body: "Le build Jenkins a échoué",
+                to: "tonemail@gmail.com"
+            )
+        }
+
+        success {
+            echo "Build réussi"
+        }
+    }
 }
