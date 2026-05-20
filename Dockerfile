@@ -7,7 +7,7 @@ LABEL description="Triangle App — TP2 Jenkins CI/CD"
 WORKDIR /app
 
 # Copier le jar construit par Maven
-COPY target/triangle-app-1.5.0.jar triangle-app.jar
+COPY target/*.jar triangle-app.jar
 
 # Démarrer l'application
 ENTRYPOINT ["java", "-jar", "triangle-app.jar"]
